@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6bn56m4jll27"]
+
+[ext_resource type="Script" path="res://Test.cs" id="1_dpn58"]
+[ext_resource type="ArrayMesh" uid="uid://cyyp7han3fmre" path="res://Cube.obj" id="1_ivgvp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i86fn"]
+
+[sub_resource type="Sky" id="Sky_i7om7"]
+sky_material = SubResource("ProceduralSkyMaterial_i86fn")
+
+[sub_resource type="Environment" id="Environment_ka10t"]
+background_mode = 2
+sky = SubResource("Sky_i7om7")
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_ka10t")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(0.708746, -0.441076, 0.550573, 2.98023e-08, 0.780441, 0.625229, -0.705464, -0.443129, 0.553135, 1.874, 1.879, 1.795)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ivgvp")
+script = ExtResource("1_dpn58")
+frequency = 9.675
