@@ -6,31 +6,31 @@ public partial class Test : MeshInstance3D
 {
     
     private float _frequency;
-    [Export] public float frequency
+    [Export] public float Frequency
     {
         get {return _frequency;}
         set
         {
             _frequency = value;
-            DoThing();
+            DoThing(0);
         }
     }
 
     public override void _Ready()
     {
-        DoThing();
+        DoThing(0);
     }
 
 
-    public void DoThing()
+    public void DoThing(float delta)
     {
-        
+
         var mdt = new MeshDataTool();
         var fnl = new FastNoiseLite();
         if(Engine.IsEditorHint() || !Engine.IsEditorHint())
         {
             var mesh = (ArrayMesh)this.Mesh;
-            fnl.Frequency = _frequency;
+            fnl.Frequency = _frequency * delta * 5;
 
             mdt.CreateFromSurface(mesh, 0); 
 

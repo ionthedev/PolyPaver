@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6bn56m4jll27"]
+[gd_scene load_steps=13 format=3 uid="uid://c6bn56m4jll27"]
 
-[ext_resource type="Script" path="res://Test.cs" id="1_dpn58"]
-[ext_resource type="ArrayMesh" uid="uid://cyyp7han3fmre" path="res://Cube.obj" id="1_ivgvp"]
+[ext_resource type="Shader" path="res://Wireframe.gdshader" id="1_2vc1k"]
+[ext_resource type="Script" path="res://Test2.cs" id="1_on2qs"]
+[ext_resource type="Material" uid="uid://cbhg6p7dw8kog" path="res://Wireframe.tres" id="1_xs6yj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i86fn"]
 
@@ -12,6 +13,24 @@ sky_material = SubResource("ProceduralSkyMaterial_i86fn")
 background_mode = 2
 sky = SubResource("Sky_i7om7")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0qkb"]
+render_priority = 0
+shader = ExtResource("1_2vc1k")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/wire_color = Color(0.541176, 0, 0.188235, 1)
+shader_parameter/wire_width = 5.27
+shader_parameter/wire_smoothness = 0.033
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7eovd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxoud"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7tkt0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tmyjb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_20wqj"]
+
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource("Environment_ka10t")
 
@@ -21,8 +40,31 @@ environment = SubResource("Environment_ka10t")
 transform = Transform3D(0.708746, -0.441076, 0.550573, 2.98023e-08, 0.780441, 0.625229, -0.705464, -0.443129, 0.553135, 1.874, 1.879, 1.795)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.4182, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_ivgvp")
-script = ExtResource("1_dpn58")
-frequency = 9.675
+material_override = ExtResource("1_xs6yj")
+material_overlay = SubResource("ShaderMaterial_t0qkb")
+mesh = SubResource("ArrayMesh_7eovd")
+script = ExtResource("1_on2qs")
+mat = ExtResource("1_xs6yj")
+
+[node name="_MeshInstance3D_51423" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, -1)
+mesh = SubResource("BoxMesh_vxoud")
+metadata/selectable = true
+
+[node name="_MeshInstance3D_51424" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1, 0, -1)
+mesh = SubResource("BoxMesh_7tkt0")
+metadata/selectable = true
+
+[node name="_MeshInstance3D_51425" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1, 0, 1)
+mesh = SubResource("BoxMesh_tmyjb")
+metadata/selectable = true
+
+[node name="_MeshInstance3D_51426" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 1)
+mesh = SubResource("BoxMesh_20wqj")
+metadata/selectable = true
