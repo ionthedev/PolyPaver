@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="22005cf4-d3a8-4d41-a431-9e8d74dbbf8f" name="PolyPaver" defaultType="TOOL">
+      <configuration id="768ccda1-4947-4f8a-8965-2badcbb69ab9" name="PolyPaver">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_Build PolyPaver" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_Clean PolyPaver" />
+        </clean>
+      </configuration>
+    </target>
+  </component>
+</project>

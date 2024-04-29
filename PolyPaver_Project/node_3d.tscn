@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4guf1mbyjllp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="PolyPaver_TestNode" type="PolyPaver_TestNode" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22057, 7.13396, 0.419508)
