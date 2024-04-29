@@ -1,3 +1,0 @@
-/home/brandon/Documents/GitHub/PolyPaver/cmake-build-debug/CMakeFiles/PolyPaver.dir
-/home/brandon/Documents/GitHub/PolyPaver/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/brandon/Documents/GitHub/PolyPaver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
